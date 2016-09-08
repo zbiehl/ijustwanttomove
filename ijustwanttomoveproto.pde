@@ -16,7 +16,7 @@ VerletStick[] sticks = new VerletStick[bonds];
 void setup() {
   size(400, 400);
   flock = new Flock();
-  for (int i=0; i<100; i++) {
+  for (int i=0; i<200; i++) {
     flock.addBoid(new Boid(width/2, height/2)); 
     //incidence[i] = PVector.mult(flock[i].velocity, -1);
   }
