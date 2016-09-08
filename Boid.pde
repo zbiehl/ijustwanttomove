@@ -96,32 +96,17 @@ class Boid {
     translate(location.x, location.y);
     rotate(theta);
     beginShape();
-    bezier(40, 15, 10, 10, 20,20, 5, 20);
+    ellipse(0, r, r, 5);
+    bezier(0, 0, 5, 20, -5, 20, 5, 20);
 //    vertex(0, -r*2);
 //    vertex(-r, r*2);
 //    vertex(r, r*2);
         endShape(CLOSE);
   popMatrix();
   
-     // star(location.x, location.y, 50, -20, 4);  
-
+      star(location.x, location.y, 5, -5, 9);  
+ 
   }
-//  void star(float x, float y, float radius1, float radius2, int npoints) {
-//  float angle = TWO_PI / npoints;
-//  float halfAngle = angle/2.0;
-//  beginShape();
-//  for (float a = 0; a < TWO_PI; a += angle) {
-//    float sx = x + cos(a) * radius2;
-//    float sy = y + sin(a) * radius2;
-//    vertex(sx, sy);
-//    sx = x + cos(a+halfAngle) * radius1;
-//    sy = y + sin(a+halfAngle) * radius1;
-//    vertex(sx, sy);
-//  }
-//  endShape(CLOSE);
-//}
-  
-
   // Wraparound
   void borders() {
     if (location.x < -r) location.x = width+r;
@@ -134,6 +119,21 @@ class Boid {
     if(location.y <= ((h-50)-r)) location.y += 1;
 
   }
+    void star(float x, float y, float radius1, float radius2, int npoints) {
+  float angle = TWO_PI / npoints;
+  float halfAngle = angle/2.0;
+  beginShape();
+  for (float a = 0; a < TWO_PI; a += angle) {
+    float sx = x + cos(a) * radius2;
+    float sy = y + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(a+halfAngle) * radius1;
+    sy = y + sin(a+halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
+  
 
   // Separation
   // Method checks for nearby boids and steers away

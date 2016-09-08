@@ -5,7 +5,7 @@
  *  -with free rotational velocity
  */
  
- //Resources: Ira Greenberg, Daniel Shiffman, Processing's "Stars" Function
+ //Resources: Ira Greenberg, Daniel Shiffman
 Flock flock;
 int particles = 100;
 VerletBall[] balls = new VerletBall[particles];
@@ -16,7 +16,7 @@ VerletStick[] sticks = new VerletStick[bonds];
 void setup() {
   size(400, 400);
   flock = new Flock();
-  for (int i=0; i<400; i++) {
+  for (int i=0; i<100; i++) {
     flock.addBoid(new Boid(width/2, height/2)); 
     //incidence[i] = PVector.mult(flock[i].velocity, -1);
   }
